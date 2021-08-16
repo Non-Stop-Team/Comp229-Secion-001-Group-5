@@ -12,9 +12,6 @@ let userModel = require('../models/user');
 let User = userModel.User; // alias
 
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
 
 
 
@@ -36,11 +33,8 @@ module.exports.displayHomePage=(req, res, next)=> {
 
 //log in page
 
-<<<<<<< HEAD
-=======
 =======
 >>>>>>> db9cc6315db30e32d2b3bd70115ddc60bea45c33
->>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
 module.exports.displayLoginPage = (req, res, next) => {
     // check if the user is already logged in
     if(!req.user) 
@@ -103,12 +97,8 @@ module.exports.processLoginPage = (req, res, next) => {
 <<<<<<< HEAD
             return res.redirect('/surveys');
 =======
-<<<<<<< HEAD
-            return res.redirect('/surveys');
-=======
             return res.redirect('/');
 >>>>>>> db9cc6315db30e32d2b3bd70115ddc60bea45c33
->>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
         });
     })(req, res, next);
 }
