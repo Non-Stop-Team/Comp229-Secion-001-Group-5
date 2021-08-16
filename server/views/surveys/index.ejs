@@ -1,10 +1,41 @@
 <% include ../partials/header.ejs %>
 <%- include ../partials/mainNav.ejs %>
 
+<style>
+  .userSurveyHeader{
+    background: #6B787F;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .side-white{
+    border-right:1px solid white;
+     
+  }
+
+  tr,td{
+    background: white;
+    border: none;
+  }
+
+  body{
+    background-color: #f0eeeea6; 
+}
+</style>
+
     <!-- MAIN CONTENT -->
     <div class="container">
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
+<<<<<<< HEAD
+          <h3>  <% title %> </h3>
+
+ 
+
+    
+
+          
+     
+=======
 <<<<<<< HEAD
           <h3>  <% title %> </h3>
           <% if(typeof displayName === 'string' && displayName ){ %>
@@ -17,10 +48,25 @@
           <!-- ------------------------ -->
           <a href="surveys/add" class="btn btn-primary"><i class="fa fa-plus"></i> Create a Survey</a>
 >>>>>>> db9cc6315db30e32d2b3bd70115ddc60bea45c33
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
           <br>
           <div class="table-responsive">
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table table-bordered table-striped table-hover  ">
               <thead>
+<<<<<<< HEAD
+                <tr class="userSurveyHeader">
+                  <% if(typeof displayName === 'string' && displayName ){ %>
+                     
+                    
+                    
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Start Date</th>
+                    <th class="text-center">End Date</th>
+                    <th class="text-center">View</th>
+                    <th class="text-center">Analyze</th>
+                    <th class="text-center">Modify</th>
+                    <th>Delete</th>
+=======
                 <tr>
                   <% if(typeof displayName === 'string' && displayName ){ %>
                      
@@ -32,6 +78,7 @@
                     <th class="text-center">End Date</th>
                     <th class="text-center"></th>
                     <th class="text-center"></th>
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
 
                     <% } else {%>
                       <H3>LOGIN / REGISTER TO CREATE AND MANAGE SURVEY</H3>
@@ -44,18 +91,35 @@
                    
                   <% } %>
 =======
+<<<<<<< HEAD
+                   
+                  <% } %>
+=======
                   <th class="text-center"></th>
                   <th class="text-center"></th>
 >>>>>>> db9cc6315db30e32d2b3bd70115ddc60bea45c33
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
                 </tr>
                 </thead>
                 <tbody> 
                   
                   <% if(typeof displayName === 'string' && displayName ){ %>
                 <% for (let count = 0; count < survey.length; count++) { %>
-                <tr>
+                <tr style="background-color: white;">
                   
                   <td><%= survey[count].surveyName %></td>
+<<<<<<< HEAD
+                  <td class="text-center"><%= survey[count].startDate %></td>
+                  <td class="text-center"><%= survey[count].endDate %></td>
+                  
+                    
+                  <td class="text-center"><a  href="/surveys/surveyview/<%=survey[count]._id %>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a></td>
+                  <td class="text-center">
+                    <a href="/surveys/statistics/<%=survey[count]._id %>" class="btn btn-success btn-sm">
+                    <i class="far fa-chart-bar"></i>
+                  </a>
+                  </td>
+=======
                   <td class="text-center"><%= survey[count].surveyOwner %></td>
                   <td class="text-center"><%= survey[count].createdDate %></td>
 <<<<<<< HEAD
@@ -69,6 +133,7 @@
 >>>>>>> db9cc6315db30e32d2b3bd70115ddc60bea45c33
                   <td class="text-center"><%= survey[count].startDate%></td>
                   <td class="text-center"><%= survey[count].endDate%></td>
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
 
                   <% if(typeof displayName == 'string' && displayName ){ %> 
                   <td class="text-center">
@@ -79,13 +144,18 @@
                     
                     <a href="/surveys/<%=survey[count]._id %>" class="btn btn-primary btn-sm">
                      
-                    <i class="fas fa-pencil-alt"></i>View
+                    <i class="fas fa-pencil-alt"></i>
+                    </a>
                   </td>
 
                   <td class="text-center">
                     <!-- ---------DELETE----------- -->
                     <a href="/surveys/delete/<%=survey[count]._id %>" class="btn btn-danger btn-sm">
+<<<<<<< HEAD
+                      <i class="fas fa-trash alt"></i>
+=======
                       <i class="fas fa-trash alt"></i>Delete
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
                       </a>   
                     <!-- ------------------------ -->
                   </td>
@@ -97,6 +167,13 @@
               </tbody>
             </table>
           </div>
+
+
+          <% if(typeof displayName === 'string' && displayName ){ %>
+            <a href="surveys/add" class="btn btn-primary btn-success"><i class="fa fa-plus"></i> Create a Survey</a>
+            <% } %>
+
+            
            <div class="col-md-offset-1 col-md-10 text-center">
             <ul class="pagination pagination-lg pager" id="myPager"></ul>
           </div>

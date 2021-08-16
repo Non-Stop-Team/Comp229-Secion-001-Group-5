@@ -8,11 +8,16 @@ const { route } = require('./users');
 /* GET home page. with login details */
 router.get('/',  indexController.displayHomePageWithLogin);
 =======
+<<<<<<< HEAD
+/* GET home page. with login details */
+router.get('/',  indexController.displayHomePageWithLogin);
+=======
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {title: 'NST Survey', displayName: req.user ? req.user.displayName: ''});
 });
 >>>>>>> db9cc6315db30e32d2b3bd70115ddc60bea45c33
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
 
 /* GET home page. */
 
@@ -31,6 +36,8 @@ router.get('/register', indexController.displayRegisterPage);
 
 /* POST Route for processing the Register page */
 router.post('/register', indexController.processRegisterPage);
+<<<<<<< HEAD
+=======
 
 /* GET to perform UserLogout */
 router.get('/logout', indexController.performLogout);
@@ -46,6 +53,7 @@ router.get('/register', indexController.displayRegisterPage);
 
 /* POST Route for processing the Register page */
 router.post('/register', indexController.processRegisterPage);
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
 
 /* GET to perform UserLogout */
 router.get('/logout', indexController.performLogout);

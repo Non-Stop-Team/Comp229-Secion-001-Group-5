@@ -6,6 +6,9 @@ let mongoose = require('mongoose');
 let survey = require('../models/survey');
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
 let surveyController= require('../controllers/surveys');
 
 
@@ -25,6 +28,13 @@ function requireAuth(req,res,next)
  
 }
 
+<<<<<<< HEAD
+router.get('/createcsv/:id',surveyController.createCsv);
+
+router.get('/createxl/:id',surveyController.createExcel);
+router.get('/thanks',(req, res, err) => {
+
+=======
 
 
 router.get('/thanks',(req, res, err) => {
@@ -45,12 +55,15 @@ router.get('/', (req, res, next) => {
       
     });
 >>>>>>> db9cc6315db30e32d2b3bd70115ddc60bea45c33
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
   
    
        res.render('surveys/thanks',{
            title:'Thanks for Participating', displayName: req.user ? req.user.displayName: ''
        });
    
+<<<<<<< HEAD
+=======
   
  
   }
@@ -112,9 +125,66 @@ router.get('/delete/:id',requireAuth, surveyController.deleteSurvey );
   
      res.render('surveys/details',{title:'Create A Survey',survey:a_survey});
   
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
   
-  });
+ 
+  }
+);
 
+router.get('/takeasurvey',surveyController.displaySurveyListForTakeASurvey );
+
+
+router.get('/takeasurvey/:id',surveyController.takeASurvey );
+
+router.post('/takeasurvey/:id',surveyController.takeAsurveyAndPost );
+
+
+//router.post('/takeasurvey/:id',requireAuth,surveyController.takeAsurveyAndPost);
+
+
+
+////////////////////////////////////////////////
+
+router.get('/',surveyController.displaySurveyList );
+
+router.get('/add',requireAuth,surveyController.displayCreateSurveyPage );
+
+router.post('/add',surveyController.createSurvey);
+
+router.post('/finalcreate',surveyController.finalCreate);
+
+
+<<<<<<< HEAD
+// GET the Survey Details page in order to edit an existing Book
+
+router.get('/surveyview/:id',requireAuth,surveyController.createSurveyToView);
+
+router.get('/:id',requireAuth,surveyController.createSurveyToEdit);
+
+router.get('/statistics/:id',requireAuth,surveyController.statistics);
+
+// POST - process the information passed from the details form and update existing survey
+router.post('/:id',requireAuth,surveyController.updateSurvey);
+
+//router.get('/createfile',surveyController.createFile);
+
+
+
+
+
+ 
+
+
+// GET - process the delete by user id
+router.get('/delete/:id',requireAuth, surveyController.deleteSurvey );
+
+
+
+
+
+
+
+=======
   router.post('/add', (req, res, next) => {
 
     /*****************
@@ -273,6 +343,7 @@ router.get('/delete/:id', (req, res, next) => {
    );
 });
 >>>>>>> db9cc6315db30e32d2b3bd70115ddc60bea45c33
+>>>>>>> 541e205932f39f64c4261dce5bba8dab26c0a162
 
   
   module.exports = router;
