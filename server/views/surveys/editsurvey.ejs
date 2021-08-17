@@ -22,10 +22,26 @@
 
   <div class="row">
   <h2 class="display-4 text-success"><%= survey.surveyName %></h2>
+  
+ 
+   </div>
 
-  <p class="lead"> 
+   <div class="row" onmouseenter="canEdit(this)" onmouseleave="cantEdit(this)" onkeyup="canEdit(this)" >
+    <textarea name="surveyDescription" class="lead form-control" style="border: none; margin: 10PX; width: 80%;" required readonly="readonly"   > 
       <%= survey.surveyDescription%>
-    </p>
+    </textarea>
+ 
+    <a href="#" class="btn btn-white  col-md-1   d-none d-md-block d-none d-lg-block canEdit "  onclick="editable(this)" style="visibility: hidden;">
+             
+      <i class="fas fa-pencil-alt fa-1x"></i>
+      </a>
+
+
+      <a href="#" class="btn btn-white btn-xs col-md-1  d-none d-md-block d-none d-lg-block canEdit" onclick="notEditable(this)" style="visibility: hidden;">
+     
+        <i class="far fa-stop-circle"></i>
+        </a>
+
    </div>
 
   <br>
