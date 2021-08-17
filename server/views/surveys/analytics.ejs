@@ -112,7 +112,7 @@
                       <tr style="background-color: white;">
                        
                         <td class="text-center"><%= answeredratio['Question'+`${x+1}`][y] %></td>
-                        <td class="row"><div class="col-md-6 text-center" style="border: 1px solid;"><%= answeredratio['Question'+`${x+1}`][y+1] %> </div> <div class="col-md-6 text-center"><%=  100* (answeredratio['Question'+`${x+1}`][y+1] /survey.respondents) %>%</div>  </td>
+                        <td class="row"><div class="col-md-6 text-center" style=""><%= answeredratio['Question'+`${x+1}`][y+1] %> </div> <div class="col-md-6 text-center"><%=  100* (answeredratio['Question'+`${x+1}`][y+1] /survey.respondents) %>%</div>  </td>
                         
                           
                         <% y=y+1; %>
